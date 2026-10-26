@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f7fc">
+    <title>TaskFlow | To-Do List</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <main class="app">
+        <header class="header">
+            <div>
+                <p class="eyebrow">YOUR PERSONAL PLANNER</p>
+                <h1>TaskFlow<span>.</span></h1>
+                <p class="subtitle">Make today count, one task at a time.</p>
+            </div>
+            <div class="header-icon">✓</div>
+        </header>
+
+        <section class="stats">
+            <article class="stat-card">
+                <span>Total tasks</span>
+                <strong id="total-count">0</strong>
+            </article>
+            <article class="stat-card">
+                <span>Pending</span>
+                <strong id="pending-count">0</strong>
+            </article>
+            <article class="stat-card">
+                <span>Completed</span>
+                <strong id="completed-count">0</strong>
+            </article>
+        </section>
+
+        <section class="task-card">
+            <h2>My tasks</h2>
+            <p class="section-subtitle">Write it down. Get it done.</p>
+
+            <form id="task-form">
+                <input
+                    type="text"
+                    id="task-input"
+                    placeholder="What do you need to do?"
+                    maxlength="200"
+                    autocomplete="off"
+                    aria-label="Enter a new task"
+                    required
+                >
+                <button type="submit" id="add-btn">+ Add task</button>
+            </form>
+
+            <div class="filters" aria-label="Filter tasks">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="pending">Pending</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+
+            <div id="task-list" aria-live="polite"></div>
+
+            <footer class="task-footer">
+                <span id="task-summary">No tasks yet</span>
+                <button type="button" id="clear-completed">
+                    Clear completed
+                </button>
+            </footer>
+        </section>
+
+        <p class="app-footer">Small steps lead to big achievements.</p>
+    </main>
+</body>
+</html>
